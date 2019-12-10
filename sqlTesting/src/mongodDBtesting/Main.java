@@ -13,11 +13,21 @@ public class Main {
     
     
     public static void main(String[] args){
-        Create create = new Create();
+        MongoDB mongo = new MongoDB();
         
-//        create.create();
-        create.delete();
-//        create.get();
+//        mongo.create1000();
+//        mongo.delete1000();
+        
+//        mongo.create200();
+//        mongo.delete200();
+        
+//        mongo.createwo1000();
+//        mongo.deletewo1000();
+        
+//        mongo.createwo200();
+//        mongo.deletewo200();
+        
+//        mongo.get();
     }
     
 }
