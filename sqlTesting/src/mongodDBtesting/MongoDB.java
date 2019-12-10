@@ -17,8 +17,8 @@ public class MongoDB {
     public void create1000() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
-        System.out.println("Time started: " + formatter.format(date));
         Instant fore = Instant.now();
+        System.out.println("Time started: " + formatter.format(date));
         try {
 
             for (int i = 1; i < 1001; i++) {
@@ -47,8 +47,8 @@ public class MongoDB {
     public void create200() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
-        System.out.println("Time started: " + formatter.format(date));
         Instant fore = Instant.now();
+        System.out.println("Time started: " + formatter.format(date));
         try {
 
             for (int i = 1; i < 201; i++) {
@@ -77,8 +77,8 @@ public class MongoDB {
     public void createwo1000() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
-        System.out.println("Time started: " + formatter.format(date));
         Instant fore = Instant.now();
+        System.out.println("Time started: " + formatter.format(date));
         Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
         mongoLogger.setLevel(Level.SEVERE);
         MongoClient mongoClient = new MongoClient("localhost", 27017);
@@ -108,8 +108,8 @@ public class MongoDB {
     public void createwo200() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
-        System.out.println("Time started: " + formatter.format(date));
         Instant fore = Instant.now();
+        System.out.println("Time started: " + formatter.format(date));
         Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
         mongoLogger.setLevel(Level.SEVERE);
         MongoClient mongoClient = new MongoClient("localhost", 27017);
@@ -139,8 +139,8 @@ public class MongoDB {
     public void delete1000() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
-        System.out.println("Time started: " + formatter.format(date));
         Instant fore = Instant.now();
+        System.out.println("Time started: " + formatter.format(date));
         try {
             Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
             mongoLogger.setLevel(Level.SEVERE);
@@ -166,8 +166,8 @@ public class MongoDB {
     public void delete200() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
-        System.out.println("Time started: " + formatter.format(date));
         Instant fore = Instant.now();
+        System.out.println("Time started: " + formatter.format(date));
         try {
             Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
             mongoLogger.setLevel(Level.SEVERE);
@@ -193,8 +193,8 @@ public class MongoDB {
     public void deletewo1000() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
-        System.out.println("Time started: " + formatter.format(date));
         Instant fore = Instant.now();
+        System.out.println("Time started: " + formatter.format(date));
         Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
         mongoLogger.setLevel(Level.SEVERE);
         MongoClient mongoClient = new MongoClient("localhost", 27017);
@@ -219,8 +219,8 @@ public class MongoDB {
     public void deletewo200() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
-        System.out.println("Time started: " + formatter.format(date));
         Instant fore = Instant.now();
+        System.out.println("Time started: " + formatter.format(date));
         Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
         mongoLogger.setLevel(Level.SEVERE);
         MongoClient mongoClient = new MongoClient("localhost", 27017);
@@ -244,8 +244,8 @@ public class MongoDB {
     public void get() {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
-        System.out.println("Time started: " + formatter.format(date));
         Instant fore = Instant.now();
+        System.out.println("Time started: " + formatter.format(date));
         try {
             Logger mongoLogger = Logger.getLogger("org.mongodb.driver");
             mongoLogger.setLevel(Level.SEVERE);

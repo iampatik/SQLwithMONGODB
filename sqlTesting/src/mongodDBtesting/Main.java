@@ -22,7 +22,7 @@ public class Main {
 //        mongo.delete200();
         
 //        mongo.createwo1000();
-//        mongo.deletewo1000();
+        mongo.deletewo1000();
         
 //        mongo.createwo200();
 //        mongo.deletewo200();
