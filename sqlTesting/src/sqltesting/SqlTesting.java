@@ -39,7 +39,13 @@ public class SqlTesting {
 //        del.delete200();
 //        del.deletewoc1000();
 //        del.deletewoc200();
-        ret.retrieveAvg();
+        
+//        ret.retrieveAvg1000();
+//        ret.retrieveAvg200();
+//        ret.retrievewo1000();
+        ret.retrievewo200();
+        
+        
         
         
         

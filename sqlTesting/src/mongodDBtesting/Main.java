@@ -13,7 +13,7 @@ public class Main {
     
     
     public static void main(String[] args){
-        MongoDB mongo = new MongoDB();
+//        MongoDB mongo = new MongoDB();
         
 //        mongo.create1000();
 //        mongo.delete1000();
@@ -22,7 +22,7 @@ public class Main {
 //        mongo.delete200();
         
 //        mongo.createwo1000();
-        mongo.deletewo1000();
+//        mongo.deletewo1000();
         
 //        mongo.createwo200();
 //        mongo.deletewo200();
