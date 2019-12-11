@@ -1,5 +1,6 @@
 package mongodDBtesting;
 
+import com.mongodb.AggregationOutput;
 import com.mongodb.BasicDBObject;
 import com.mongodb.Cursor;
 import com.mongodb.DB;
@@ -59,17 +60,29 @@ public class Retrieve {
             MongoClient mongoClient = new MongoClient("localhost", 27017);
             DB db = mongoClient.getDB("test");
             System.out.println("Connected to database!");
-            MongoCollection<Document> dbCollection = (MongoCollection<Document>) db.getCollection("sqltesting");
-            AggregateIterable<org.bson.Document> aggregate = dbCollection.aggregate(Arrays.asList(Aggregates.group("_id", new BsonField("Average", new BsonDocument("$avg", new BsonString("$col1"))))));
-            Document result = aggregate.first();
-            double age = result.getDouble("Average");
+//            MongoCollection<Document> dbCollection = db.getCollection("sqltesting", Document.class);
+//            AggregateIterable<org.bson.Document> aggregate = dbCollection.aggregate(Arrays.asList(Aggregates.group("_id", new BsonField("Average", new BsonDocument("$avg", new BsonString("$col1"))))));
+//            Document result = aggregate.first();
+//            double age = result.getDouble("Average");
 //            DBCollection collection = db.getCollection("sqltesting");
 //            for (int i = 1; i < 6; i++) {
 //                db.collection.aggregate(["{$group: {_id:null, Average of column "+i": {$avg:$col"+i"} } }"]);
 //                collection.aggregate(
 //                        (List<? extends DBObject>) Document.parse("{ $group: { _id: null, col" + 1 + ": { $avg: '$col'" + 1 + " } } }"));
 //            }
-            System.out.println(age);
+//            System.out.println(age);
+            for (int i = 1; i < 6; i++) {
+                DBObject groupFields = new BasicDBObject("_id", null);
+                groupFields.put("Average", new BasicDBObject("$avg", "$col" + i));
+                DBObject group = new BasicDBObject("$group", groupFields);
+                AggregationOutput output = db.getCollection("sqltesting").aggregate(group);
+                Iterable<DBObject> list = output.results();
+                System.out.println(list);
+            }
+            Instant ter = Instant.now();
+            Date date1 = new Date();
+            Duration duration = Duration.between(fore, ter);
+            System.out.println("Time ended: " + formatter.format(date1) + "\n" + "Duration: " + duration.getSeconds() + " second/s");
 
         } catch (SecurityException e) {
             System.out.println(e);

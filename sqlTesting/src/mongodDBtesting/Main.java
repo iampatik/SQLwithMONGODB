@@ -14,6 +14,12 @@ public class Main {
     
     public static void main(String[] args){
 //        MongoDB mongo = new MongoDB();
+//        Create create = new Create();
+        Retrieve ret = new Retrieve();
+        
+        ret.retrieveAvg1000();
+        
+//        create.create1000();
         
 //        mongo.create1000();
 //        mongo.delete1000();
