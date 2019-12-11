@@ -13,27 +13,17 @@ public class Main {
     
     
     public static void main(String[] args){
-//        MongoDB mongo = new MongoDB();
 //        Create create = new Create();
-        Retrieve ret = new Retrieve();
+//        Retrieve ret = new Retrieve();
+//        Delete del = new Delete();
         
-        ret.retrieveAvg1000();
+//        del.delete200();
+//        create.createwo1000();
+//        create.create200();
+//        ret.retrieveAvg200();
+//        ret.retrieveAvgwo200();
+//        ret.retrieveAvgwo1000();
         
-//        create.create1000();
-        
-//        mongo.create1000();
-//        mongo.delete1000();
-        
-//        mongo.create200();
-//        mongo.delete200();
-        
-//        mongo.createwo1000();
-//        mongo.deletewo1000();
-        
-//        mongo.createwo200();
-//        mongo.deletewo200();
-        
-//        mongo.get();
     }
     
 }
