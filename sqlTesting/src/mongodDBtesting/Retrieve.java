@@ -6,6 +6,10 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
+import com.mongodb.client.AggregateIterable;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.Aggregates;
+import com.mongodb.client.model.BsonField;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
@@ -14,6 +18,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.bson.BsonDocument;
+import org.bson.BsonString;
 import org.bson.Document;
 
 public class Retrieve {
@@ -53,12 +59,17 @@ public class Retrieve {
             MongoClient mongoClient = new MongoClient("localhost", 27017);
             DB db = mongoClient.getDB("test");
             System.out.println("Connected to database!");
-            DBCollection collection = db.getCollection("sqltesting");
-            for (int i = 1; i < 6; i++) {
-                db.collection.aggregate(["{$group: {_id:null, Average of column "+i": {$avg:$col"+i"} } }"]);
+            MongoCollection<Document> dbCollection = (MongoCollection<Document>) db.getCollection("sqltesting");
+            AggregateIterable<org.bson.Document> aggregate = dbCollection.aggregate(Arrays.asList(Aggregates.group("_id", new BsonField("Average", new BsonDocument("$avg", new BsonString("$col1"))))));
+            Document result = aggregate.first();
+            double age = result.getDouble("Average");
+//            DBCollection collection = db.getCollection("sqltesting");
+//            for (int i = 1; i < 6; i++) {
+//                db.collection.aggregate(["{$group: {_id:null, Average of column "+i": {$avg:$col"+i"} } }"]);
 //                collection.aggregate(
 //                        (List<? extends DBObject>) Document.parse("{ $group: { _id: null, col" + 1 + ": { $avg: '$col'" + 1 + " } } }"));
-            }
+//            }
+            System.out.println(age);
 
         } catch (SecurityException e) {
             System.out.println(e);
